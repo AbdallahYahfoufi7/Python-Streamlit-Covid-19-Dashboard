@@ -158,32 +158,10 @@ elif option_1 == 'US Map':
     option_2 = st.radio('',('Weekly new Covid-19 cases' ,'Weekly new Covid-19 deaths'))
 
     if option_2 == 'Weekly new Covid-19 cases':
-    # ...
-    with new_cases_positions:
-        try:
-            fig = px.choropleth(new_cases_df, ...)
-            fig.update_layout(
-                title_text='Covid-19 Weekly new cases in each US county',
-                geo_scope='usa'
-            )
-            st.plotly_chart(fig, use_container_width=True)
-        except:
-            st.error("Error: Map could not be loaded. Please try again later.")
+    
+ 
+       
 
-elif option_2 == 'Weekly new Covid-19 deaths':
-    # ...
-    with new_death_positions:
-        try:
-            fig_1 = px.choropleth(new_deaths_county, ...)
-            fig_1.update_layout(
-                title_text='Covid 19 Weekly new deaths in each county',
-                geo_scope='usa'
-            )
-            st.plotly_chart(fig_1, use_container_width=True)
-        except:
-            st.error("Error: Map could not be loaded. Please try again later.")
-
-# ...
 
 
 
@@ -229,7 +207,7 @@ elif option_2 == 'Weekly new Covid-19 deaths':
         with ss:
              chosen = st.select_slider('', options=d_2, value=d_2[0],key='1')
              with new_cases_positions:
-                 #fig = choropleth_plot(new_cases_df,chosen,[0,1000])
+                 fig = choropleth_plot(new_cases_df,chosen,[0,1000])
                  fig = px.choropleth(new_cases_df,  # Input Pandas DataFrame
                               locations="countyFIPS",  # DataFrame column with locations
                               geojson= counties,
@@ -238,7 +216,7 @@ elif option_2 == 'Weekly new Covid-19 deaths':
                                range_color=(0,10000)
                                ) # Set to plot as US States
 
-                 #fig = choropleth_plot(new_cases_df,chosen,[0,100000],'burg',counties)
+                 fig = choropleth_plot(new_cases_df,chosen,[0,100000],'burg',counties)
                  fig.update_layout(
                      title_text = 'Covid-19 Weekly new cases in each county', # Create a Title
                      geo_scope='usa',)
@@ -249,14 +227,14 @@ elif option_2 == 'Weekly new Covid-19 deaths':
                         with ss:
                             chosen = st.select_slider('', options=d_2, value=week, key="2")
                         with new_cases_positions:
-                            #fig = choropleth_plot(new_cases_df,week,[0,1000])
+                            fig = choropleth_plot(new_cases_df,week,[0,1000])
                             fig = px.choropleth(new_cases_df,  # Input Pandas DataFrame
                                  locations="countyFIPS",  # DataFrame column with locations
                                 geojson= counties,
                                  color= week,# DataFrame column with color values
                                  color_continuous_scale='burg',
                                  range_color=(0,10000)) # Set to plot as US States
-                            #fig = choropleth_plot(new_cases_df,chosen,[0,100000],'burg',counties)
+                            fig = choropleth_plot(new_cases_df,chosen,[0,100000],'burg',counties)
                             fig.update_layout(
                                 title_text = 'Covid-19 Weekly new cases in each US county', # Create a Title
                                 geo_scope='usa',)
