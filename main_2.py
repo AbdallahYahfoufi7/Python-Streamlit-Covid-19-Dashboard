@@ -16,7 +16,7 @@ covid_cnfrmd = pd.read_csv('covid_confirmed_usafacts_updated_data.csv')
 county_pop = pd.read_csv('covid_county_population_usafacts.csv')
 covid_deaths = pd.read_csv('covid_deaths_usafacts_updated_data.csv')
 
-st.title("United States Covid-19 Data Analysis")
+st.title("Active cases or daily Growth rate")
 
 
 def group_and_drop(df,col_name):
@@ -140,7 +140,7 @@ fig_death.update_traces(line_color = "maroon")
 #b = st.plotly_chart(fig_death)
 
 
-option_1 = st.selectbox('Select the type of Visualization',('Line Chart','US Map'))
+option_1 = st.selectbox('Select the type of Visualization',('Line Chart'))
 
 if option_1 == 'Line Chart':
     option = st.radio('',('Weekly new Covid-19 cases','Weekly new Covid-19 deaths', 'Both'))
