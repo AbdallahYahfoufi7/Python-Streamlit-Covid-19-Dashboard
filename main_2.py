@@ -159,7 +159,7 @@ elif option_1 == 'US Map':
 
     if option_2 == 'Weekly new Covid-19 cases':
     
- 
+ st.plotly_chart(fig_new_cases,use_container_width=True)
        
 
 
