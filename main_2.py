@@ -158,10 +158,32 @@ elif option_1 == 'US Map':
     option_2 = st.radio('',('Weekly new Covid-19 cases' ,'Weekly new Covid-19 deaths'))
 
     if option_2 == 'Weekly new Covid-19 cases':
-st.plotly_chart(fig_new_cases,use_container_width=True)
+    # ...
+    with new_cases_positions:
+        try:
+            fig = px.choropleth(new_cases_df, ...)
+            fig.update_layout(
+                title_text='Covid-19 Weekly new cases in each US county',
+                geo_scope='usa'
+            )
+            st.plotly_chart(fig, use_container_width=True)
+        except:
+            st.error("Error: Map could not be loaded. Please try again later.")
 
 elif option_2 == 'Weekly new Covid-19 deaths':
-        st.plotly_chart(fig_death,use_container_width=True)
+    # ...
+    with new_death_positions:
+        try:
+            fig_1 = px.choropleth(new_deaths_county, ...)
+            fig_1.update_layout(
+                title_text='Covid 19 Weekly new deaths in each county',
+                geo_scope='usa'
+            )
+            st.plotly_chart(fig_1, use_container_width=True)
+        except:
+            st.error("Error: Map could not be loaded. Please try again later.")
+
+# ...
 
 
 
