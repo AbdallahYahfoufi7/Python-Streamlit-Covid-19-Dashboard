@@ -97,16 +97,16 @@ def slider_code(df):
             d_2.append(j)
     return d_2
 
- def choropleth_plot(df,date_r,l,color,counties):
-     fig = px.choropleth(df,  # Input Pandas DataFrame
-            st.write(df[countyFIPS]),
+# def choropleth_plot(df,date_r,l,color,counties):
+   #  fig = px.choropleth(df,  # Input Pandas DataFrame
+          #  st.write(df[countyFIPS]),
 
-          locations=df[countyFIPS],  # DataFrame column with locations
-             geojson= counties,
-             color= df[date_r],# DataFrame column with color values
-            color_continuous_scale=color,
-           range_color=(l[0],l[1]))
-    return fig
+         ## locations=df[countyFIPS],  # DataFrame column with locations
+#geojson= counties,
+         #    color= df[date_r],# DataFrame column with color values
+          ##  color_continuous_scale=color,
+          # range_color=(l[0],l[1]))
+    #return fig
 
 
 #Filtering the required columns
