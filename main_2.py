@@ -97,16 +97,16 @@ def slider_code(df):
             d_2.append(j)
     return d_2
 
-# def choropleth_plot(df,date_r,l,color,counties):
-#     fig = px.choropleth(df,  # Input Pandas DataFrame
-#             st.write(df[countyFIPS]),
-#
-#             locations=df[countyFIPS],  # DataFrame column with locations
-#             geojson= counties,
-#             color= df[date_r],# DataFrame column with color values
-#             color_continuous_scale=color,
-#             range_color=(l[0],l[1]))
-#     return fig
+ def choropleth_plot(df,date_r,l,color,counties):
+     fig = px.choropleth(df,  # Input Pandas DataFrame
+            st.write(df[countyFIPS]),
+
+          locations=df[countyFIPS],  # DataFrame column with locations
+             geojson= counties,
+             color= df[date_r],# DataFrame column with color values
+            color_continuous_scale=color,
+           range_color=(l[0],l[1]))
+    return fig
 
 
 #Filtering the required columns
@@ -140,7 +140,7 @@ fig_death.update_traces(line_color = "maroon")
 #b = st.plotly_chart(fig_death)
 
 
-option_1 = st.selectbox('Select the type of Visualization',('Line Chart','MAP'))
+option_1 = st.selectbox('Select the type of Visualization',('Line Chart',' US MAP'))
 
 if option_1 == 'Line Chart':
     option = st.radio('',('Weekly new Covid-19 cases','Weekly new Covid-19 deaths', 'Both'))
