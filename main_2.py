@@ -137,7 +137,7 @@ fig_death = px.line(weekly_death_cases,
             title = 'Weekly Covid-19 Deaths')
 
 fig_death.update_traces(line_color = "maroon")
-#b = st.plotly_chart(fig_death)
+b = st.plotly_chart(fig_death)
 
 
 option_1 = st.selectbox('Select the type of Visualization',('Line Chart',' US MAP'))
@@ -157,7 +157,13 @@ if option_1 == 'Line Chart':
 elif option_1 == 'US Map':
     option_2 = st.radio('',('Weekly new Covid-19 cases' ,'Weekly new Covid-19 deaths'))
 
-    #if option_2 == 'Weekly new Covid-19 cases':
+    if option_2 == 'Weekly new Covid-19 cases':
+st.plotly_chart(fig_new_cases,use_container_width=True)
+
+elif option_2 == 'Weekly new Covid-19 deaths':
+        st.plotly_chart(fig_death,use_container_width=True)
+
+
 
     #Question 3
     covid_county = group_and_drop(covid_cnfrmd,'countyFIPS')
