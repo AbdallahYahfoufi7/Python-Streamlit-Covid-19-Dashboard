@@ -2,7 +2,7 @@
 """
 Created on Tues June 14 00:40:13 2023
 
-@author: Abdullah Yahfoufi
+@author: Abdallah Yahfoufi
 @email : abdallahyahfoufi@icloud.com
 """
 import os
