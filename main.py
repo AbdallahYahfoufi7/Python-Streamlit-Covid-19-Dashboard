@@ -14,6 +14,7 @@ import requests
 import streamlit as st
 from PIL import Image
 from requests.exceptions import ConnectionError
+import plotly.graph_objects as go
 from datetime import date,datetime
 
 def config():
