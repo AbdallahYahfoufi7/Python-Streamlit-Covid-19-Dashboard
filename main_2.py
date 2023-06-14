@@ -154,9 +154,10 @@ if option_1 == 'Line Chart':
         st.plotly_chart(fig_death,use_container_width=True)
 
 
-elif option_1 == 'US Map':
-    option_2 = st.radio('',('Weekly new Covid-19 cases' ,'Weekly new Covid-19 deaths'))
-
+elif option_2 == 'US Map':
+    option = st.radio('',('Weekly new Covid-19 cases' ,'Weekly new Covid-19 deaths'))
+ if option == 'Weekly new Covid-19 cases':
+        st.plotly_chart(fig_new_cases,use_container_width=True)
     #if option_2 == 'Weekly new Covid-19 cases':
 
     #Question 3
