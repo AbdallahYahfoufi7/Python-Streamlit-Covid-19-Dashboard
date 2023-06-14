@@ -16,7 +16,7 @@ covid_cnfrmd = pd.read_csv('covid_confirmed_usafacts_updated_data.csv')
 county_pop = pd.read_csv('covid_county_population_usafacts.csv')
 covid_deaths = pd.read_csv('covid_deaths_usafacts_updated_data.csv')
 
-st.title("United States Covid-19 Data Analysis")
+st.title("WHO's COVID-19 Weekly Epidemiological Update")
 
 
 def group_and_drop(df,col_name):
