@@ -140,7 +140,7 @@ fig_death.update_traces(line_color = "maroon")
 #b = st.plotly_chart(fig_death)
 
 
-option_1 = st.selectbox('Select the type of Visualization',('Line Chart','US Map'))
+option_1 = st.selectbox('Select the type of Visualization',('Line Chart','Map'))
 
 if option_1 == 'Line Chart':
     option = st.radio('',('Weekly new Covid-19 cases','Weekly new Covid-19 deaths', 'Both'))
