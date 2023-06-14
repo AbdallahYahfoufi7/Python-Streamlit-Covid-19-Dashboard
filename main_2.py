@@ -156,8 +156,46 @@ if option_1 == 'Line Chart':
 
 elif option_2 == 'US Map':
     option = st.radio('',('Weekly new Covid-19 cases' ,'Weekly new Covid-19 deaths'))
- if option == 'Weekly new Covid-19 cases':
-        st.plotly_chart(fig_new_cases,use_container_width=True)
+map_initial = fn.map_initial(df_merged, update_day, 'New cases')
+
+
+if submit_button_map:
+    del map_initial
+    cust.container_map_continent()
+    with container_1:
+        map_continent = fn.map_continent(df_merged, df_continents, continent_map, calendar_map, data_category_map) 
+        st.plotly_chart(map_continent, use_container_width=True)
+
+
+elif submit_button_linechart:
+    del map_initial 
+    cust.back_to_map_button()
+    cust.container_chart() 
+    df_world = fn.df_world(df_owid)
+    with container_1:
+        back_to_map = st.button('Back to map view') 
+        for i in range(len(data_category_linechart)):
+            line_chart_user = fn.line_chart(df_merged, df_world, country_linechart, data_category_linechart[i], date_max, date_min) 
+            st.plotly_chart(line_chart_user, use_container_width=True)
+
+
+elif submit_button_barchart:
+    del map_initial
+    cust.back_to_map_button()
+    cust.container_chart()          
+    with container_1:
+        back_to_map = st.button('Back to map view') 
+        for i in range(len(data_category_barchart)):
+            bar_chart_user = fn.bar_chart(df_merged, country_barchart, calendar_barchart, data_category_barchart[i])
+            st.plotly_chart(bar_chart_user, use_container_width=True)
+
+
+try:
+    with container_1:
+        cust.container_map()
+        st.plotly_chart(map_initial, use_container_width=True)
+except: 
+    pass        
     #if option_2 == 'Weekly new Covid-19 cases':
 
     #Question 3
