@@ -140,9 +140,9 @@ fig_death.update_traces(line_color = "maroon")
 #b = st.plotly_chart(fig_death)
 
 
-option_1 = st.selectbox('Select the type of Visualization',('Social Media Analysis','Market Basket Analysis','RFM_Segmentation')
+option_1 = st.selectbox('Select the type of Visualization',('line chart','Market Basket Analysis','RFM_Segmentation')
 
-if option_1 == 'Social Media Analysis':
+if option_1 == 'line chart':
     option = st.radio('',('Weekly new Covid-19 cases','Weekly new Covid-19 deaths', 'Both'))
     if option == 'Weekly new Covid-19 cases':
         st.plotly_chart(fig_new_cases,use_container_width=True)
