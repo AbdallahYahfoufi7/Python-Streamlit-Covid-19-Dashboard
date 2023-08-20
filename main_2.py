@@ -142,22 +142,7 @@ fig_death.update_traces(line_color = "maroon")
 
 option_1 = st.selectbox('Select the type of Visualization',('line chart','Market Basket Analysis','RFM_Segmentation')
 
-if option_1 == 'line chart':
-    option = st.radio('',('Weekly new Covid-19 cases','Weekly new Covid-19 deaths', 'Both'))
-    if option == 'Weekly new Covid-19 cases':
-        st.plotly_chart(fig_new_cases,use_container_width=True)
-    elif option == 'Weekly new Covid-19 deaths':
-        st.plotly_chart(fig_death,use_container_width=True)
 
-    elif option == 'Both':
-        st.plotly_chart(fig_new_cases,use_container_width=True)
-        st.plotly_chart(fig_death,use_container_width=True)
-
-
-elif option_1 == 'US Map':
-    option_2 = st.radio('',('Weekly new Covid-19 cases' ,'Weekly new Covid-19 deaths'))
-
-    #if option_2 == 'Weekly new Covid-19 cases':
 
     #Question 3
     covid_county = group_and_drop(covid_cnfrmd,'countyFIPS')
